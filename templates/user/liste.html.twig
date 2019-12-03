@@ -6,11 +6,13 @@
     <table class="table">   
         <tr><th>Nom</th><th>Prénom</th></tr>  
     {% for key,value in listeUser %} 
-            <tr><td><a href="">{{ value.nom }}</a>
+            <tr><td><a href="{{ path('user_modifier',{'id':value.id})}}">{{ value.nom }}</a>
                 </td><td>{{ value.prenom }}</td></tr> 
     {% endfor %}   
     </table>
 {% else %}  
     Aucun utilisateur à afficher
 {% endif %}
+         <a href="{{ path('user_ajout') }}">Ajout</a>
+
 {% endblock %}
